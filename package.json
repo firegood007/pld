@@ -1,7 +1,7 @@
 {
     "name": "Unit-Testing",
     "version": "1.0.0",
-    "description": "Razorfish Offshore FE Unit Test",
+    "description": " FE Unit Test",
     "main": "Gruntfile.js",
     "devDependencies": {
         "grunt": "^1.0.1",
