@@ -11,7 +11,8 @@ requirejs.config({
         register    : 'js/register/controller',
         css         : 'js/lib/css.min',
         handlebars  : 'js/lib/handlebars-v4.0.5',
-        validate    : 'js/lib/jquery.validate.min'
+        validate    : 'js/lib/jquery.validate.min',
+        pubsub      : 'js/lib/pubsub'
     },
     shim: {
         handlebars: {  

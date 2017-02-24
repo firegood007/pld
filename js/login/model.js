@@ -4,17 +4,7 @@ define([], function() {
     var DB = {
         admin: 'admin'
     },
-    userDB,
     model = {
-        login: function(user,password) {
-            userDB = this.getLocalStorage();
-            if (userDB[user] === undefined || userDB[user] !== password) {
-                alert('Your username or password was incorrect');
-                return false;
-            } else {
-                return true;
-            }
-        },
         getLocalStorage:function(){
             var user = localStorage.getItem('user');
             if(user){
@@ -24,6 +14,9 @@ define([], function() {
             localStorage.setItem('user',JSON.stringify(DB));
             return DB;
         },
+        userNow: function(username) {
+            localStorage.setItem('userNow', username);
+        }
     }
     return model;
 });

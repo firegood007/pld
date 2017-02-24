@@ -85,7 +85,7 @@ define(['handlebars'], function(Handlebars) {
                 var data;
                 try {
                     data = JSON.parse(json);
-                }cartch(er) {
+                }catch(er) {
                    alert('JSON is not a Object'); 
                 }
                 return data;
@@ -94,7 +94,7 @@ define(['handlebars'], function(Handlebars) {
                 var json;
                 try {
                     json = JSON.stringify(data);
-                }cartch(er) {
+                }catch(er) {
                    alert('JSON is not a Object'); 
                 }
                 return json;

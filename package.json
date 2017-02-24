@@ -1,21 +1,26 @@
 {
-    "name": "Unit-Testing",
-    "version": "1.0.0",
-    "description": " FE Unit Test",
-    "main": "Gruntfile.js",
-    "devDependencies": {
-        "grunt": "^1.0.1",
-        "grunt-contrib-less": "^1.4.0",
-        "karma": "^1.3.0",
-        "karma-chrome-launcher": "^2.0.0",
-        "karma-coverage": "^1.1.1",
-        "karma-jasmine": "^1.0.2",
-        "karma-requirejs": "^1.1.0",
-        "requirejs": "^2.3.2"
-    },
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "Eddy Huang",
-    "license": "ISC"
+  "name": "Unit-Testing",
+  "version": "1.0.0",
+  "description": " FE Unit Test",
+  "main": "Gruntfile.js",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-less": "^1.4.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.5.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-coverage": "^1.1.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-requirejs": "^1.1.0",
+    "load-grunt-tasks": "^3.5.2",
+    "requirejs": "^2.3.3",
+    "time-grunt": "^1.4.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eddy Huang",
+  "license": "ISC"
 }

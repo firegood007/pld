@@ -1,24 +1,39 @@
 'use strict';
 
 define(['js/login/view',
-        'js/login/model'],
-function(View, Model) {
-    var pubsub = $({}),view;
-    pubsub.on('login', function(e, arg1, arg2) {
-        if(Model.login(arg1, arg2)){
-            view.submit();
-        };
-    })
+        'js/login/model',
+        'pubsub'],
+function(View, Model,Pubsub) {
     var controller = function() {
-
+        var self = this;
+        this.view = new View(
+            new Pubsub(self).regist({
+                login: self.login,
+                setCurrentUser: self.setCurrentUser
+            })
+        )
     }
     controller.prototype = {
         init:function(){
-            view = new View(pubsub);
-            view.init();
+            this.view.init();
             Model.getLocalStorage();
-            return true;
+        },
+        login: function(obj){
+            var flag = true;
+            var user = obj.user,
+            password = obj.password,
+            userDB;
+            userDB = Model.getLocalStorage();
+            if (userDB[user] === undefined || userDB[password] !== password) {
+                flag = false;
+                this.view.error();
+            }
+            flag && this.view.submit();
+        },
+        setCurrentUser: function(username) {
+            Model.userNow(username);
         }
+
     }
     var ctr = new controller();
     return ctr;
