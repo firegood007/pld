@@ -2,9 +2,11 @@
 
 define([], function() {
     var model = {
-        register:function(user,password){
+        update:function(obj,callback){
+            var user = obj.user,
+            password = obj.password
             this.writeLocalStorage(user,password);
-            return true
+            callback && callback;
         },
         writeLocalStorage:function(user,password){
             var localUser = localStorage.getItem('user'),usernow ={};

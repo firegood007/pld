@@ -22,7 +22,10 @@ define(['validate','css!style/register/register.css'], function() {
                 var username = $('.register-input.username').val().trim(),
                 password = $('.register-input.password').val().trim();
                 if(self.verify (username)){
-                    self.pubsub.trigger('register', [username, password]);
+                    self.pubsub.publish('register', {
+                        user: username,
+                        password: password
+                    });
                 }else {
                     alert('submit error,please check your message');
                 }

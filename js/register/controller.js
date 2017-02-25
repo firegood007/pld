@@ -1,24 +1,26 @@
 'use strict';
 
 define(['js/register/view',
-        'js/register/model'
+        'js/register/model',
+        'pubsub'
     ],
-    function(View, Model) {
-        var pubsub = $({});
-        var view;
-        pubsub.on('register', function(e, arg1, arg2) {
-            if(Model.register(arg1, arg2)){
-                view.submit();
-            };
-        })
+    function(View, Model, Pubsub) {
         var controller = function() {
-
+            var self = this;
+            this.view  = new View(
+                new Pubsub(self).regist({
+                    register: self.register
+                }))
         }
         controller.prototype = {
             init: function() {
-                view = new View(pubsub);
-                view.init();
-                return true;
+                this.view.init();
+            },
+            register: function(arg) {
+                var self = this;
+                Model.update(arg,function() {
+                    self.view.submit();
+                })      
             }
         }
         var ctr = new controller();

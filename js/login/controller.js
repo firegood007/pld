@@ -24,7 +24,7 @@ function(View, Model,Pubsub) {
             password = obj.password,
             userDB;
             userDB = Model.getLocalStorage();
-            if (userDB[user] === undefined || userDB[password] !== password) {
+            if (userDB[user] !== password) {
                 flag = false;
                 this.view.error();
             }
