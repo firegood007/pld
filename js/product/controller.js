@@ -6,9 +6,9 @@ define(['js/product/model', 'js/product/view'], function(Model, View) {
     }
     controller.prototype = {
         init: function(id){
-            Model.getProduct(id).done(function(data,datas) {
+            Model.getProduct(id).done(function(obj) {
                 var view = new View();
-                view.init(data,datas);
+                view.init(obj);
             });
         }
     }

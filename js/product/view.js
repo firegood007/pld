@@ -6,8 +6,8 @@ define(['handlebars', 'js/common', 'css!style/product/product.css'], function(Ha
     };
 
     view.prototype = {
-        init: function(data, datas) {
-            this.show(data, datas);
+        init: function(obj) {
+            this.show(obj.data, obj.datas);
         },
         show: function(data,datas) {
             var self = this;

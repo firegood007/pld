@@ -5,8 +5,8 @@ define(['handlebars', 'js/common', 'css!style/productList/productList.css'], fun
         this.container = $('#container-product');
     }
     view.prototype = {
-        init: function(data, datas) {
-            this.show(data, datas);
+        init: function(obj) {
+            this.show(obj.data, obj.datas);
         },
         show: function(data, datas) {
             var self = this;

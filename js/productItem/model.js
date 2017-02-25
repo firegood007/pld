@@ -12,7 +12,7 @@ define(['js/common'], function(Model) {
                         }
                     });
                     if(filterData.length !== 0){
-                        defer.resolve(filterData[0],data); 
+                        defer.resolve({'data':filterData[0],'datas':data}); 
                         return; 
                     }   
                 }

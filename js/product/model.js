@@ -10,7 +10,7 @@ define(['js/common'], function(Model) {
                     $(data[i]).filter(function(j, items) {
                         var filterData = $(items.productList).filter(function(k, item) {
                             if(item.sku === id) {
-                                defer.resolve(item,data);
+                                defer.resolve({'data':item,'datas':data});
                                 return item;
                             }
                         });
